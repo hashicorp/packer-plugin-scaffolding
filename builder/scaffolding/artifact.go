@@ -1,6 +1,6 @@
 package scaffolding
 
-// dummy Artifact implementation - does nothing
+// mock Artifact implementation - does nothing
 type Artifact struct {
 }
 

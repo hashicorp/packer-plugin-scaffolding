@@ -14,7 +14,7 @@ import (
 
 type Config struct {
 	common.PackerConfig `mapstructure:",squash"`
-	DummyOption         string `mapstructure:"dummy"`
+	MockOption          string `mapstructure:"mock"`
 	ctx                 interpolate.Context
 }
 

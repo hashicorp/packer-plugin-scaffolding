@@ -13,7 +13,7 @@ import (
 )
 
 type Config struct {
-	DummyOption string `mapstructure:"dummy"`
+	MockOption string `mapstructure:"mock"`
 	ctx        interpolate.Context
 }
 
@@ -42,10 +42,10 @@ func (p *Provisioner) Prepare(raws ...interface{}) error {
 
 func (p *Provisioner) Provision(_ context.Context, ui packer.Ui, _ packer.Communicator, generatedData map[string]interface{}) error {
 	p.config.ctx.Data = generatedData
-	dummy, err := interpolate.Render(p.config.DummyOption, &p.config.ctx)
+	mock, err := interpolate.Render(p.config.MockOption, &p.config.ctx)
 	if err != nil {
 		return fmt.Errorf("Error interpolating comment: %s", err)
 	}
-	fmt.Printf(dummy)
+	fmt.Printf(mock)
 	return nil
 }

@@ -17,7 +17,7 @@ type FlatConfig struct {
 	PackerOnError       *string           `mapstructure:"packer_on_error" cty:"packer_on_error" hcl:"packer_on_error"`
 	PackerUserVars      map[string]string `mapstructure:"packer_user_variables" cty:"packer_user_variables" hcl:"packer_user_variables"`
 	PackerSensitiveVars []string          `mapstructure:"packer_sensitive_variables" cty:"packer_sensitive_variables" hcl:"packer_sensitive_variables"`
-	DummyOption         *string           `mapstructure:"dummy" cty:"dummy" hcl:"dummy"`
+	MockOption          *string           `mapstructure:"mock" cty:"mock" hcl:"mock"`
 }
 
 // FlatMapstructure returns a new FlatConfig.
@@ -40,7 +40,7 @@ func (*FlatConfig) HCL2Spec() map[string]hcldec.Spec {
 		"packer_on_error":            &hcldec.AttrSpec{Name: "packer_on_error", Type: cty.String, Required: false},
 		"packer_user_variables":      &hcldec.AttrSpec{Name: "packer_user_variables", Type: cty.Map(cty.String), Required: false},
 		"packer_sensitive_variables": &hcldec.AttrSpec{Name: "packer_sensitive_variables", Type: cty.List(cty.String), Required: false},
-		"dummy":                      &hcldec.AttrSpec{Name: "dummy", Type: cty.String, Required: false},
+		"mock":                       &hcldec.AttrSpec{Name: "mock", Type: cty.String, Required: false},
 	}
 	return s
 }

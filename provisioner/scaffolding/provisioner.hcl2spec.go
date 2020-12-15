@@ -9,7 +9,7 @@ import (
 // FlatConfig is an auto-generated flat version of Config.
 // Where the contents of a field with a `mapstructure:,squash` tag are bubbled up.
 type FlatConfig struct {
-	DummyOption *string `mapstructure:"dummy" cty:"dummy" hcl:"dummy"`
+	MockOption *string `mapstructure:"mock" cty:"mock" hcl:"mock"`
 }
 
 // FlatMapstructure returns a new FlatConfig.
@@ -24,7 +24,7 @@ func (*Config) FlatMapstructure() interface{ HCL2Spec() map[string]hcldec.Spec }
 // The decoded values from this spec will then be applied to a FlatConfig.
 func (*FlatConfig) HCL2Spec() map[string]hcldec.Spec {
 	s := map[string]hcldec.Spec{
-		"dummy": &hcldec.AttrSpec{Name: "dummy", Type: cty.String, Required: false},
+		"mock": &hcldec.AttrSpec{Name: "mock", Type: cty.String, Required: false},
 	}
 	return s
 }

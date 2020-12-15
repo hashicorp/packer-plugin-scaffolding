@@ -16,7 +16,7 @@ const BuilderId = "scaffolding.builder"
 
 type Config struct {
 	common.PackerConfig `mapstructure:",squash"`
-	DummyOption         string `mapstructure:"dummy"`
+	MockOption          string `mapstructure:"mock"`
 }
 
 type Builder struct {
