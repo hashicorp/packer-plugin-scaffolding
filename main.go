@@ -7,8 +7,8 @@ import (
 	scaffoldingPP "packer-plugin-scaffolding/post-processor/scaffolding"
 	scaffoldingProv "packer-plugin-scaffolding/provisioner/scaffolding"
 
-	"github.com/hashicorp/packer/packer-plugin-sdk/plugin"
-	"github.com/hashicorp/packer/packer-plugin-sdk/version"
+	"github.com/hashicorp/packer-plugin-sdk/plugin"
+	"github.com/hashicorp/packer-plugin-sdk/version"
 )
 
 var (
