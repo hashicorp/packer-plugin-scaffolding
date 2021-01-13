@@ -19,18 +19,18 @@ before:
     - go install github.com/hashicorp/packer/cmd/mapstructure-to-hcl2
     - go generate ./...
 
-    # Install packer-plugin-check to check binary compatibility with Packer
-    - go install github.com/hashicorp/packer/cmd/packer-plugin-check
+    # Install packer-plugins-check to check binary compatibility with Packer
+    - go install github.com/hashicorp/packer/cmd/packer-plugins-check
 
 builds:
-  # A separated build to run the packer-plugin-check only once for a linux_amd64 binary
+  # A separated build to run the packer-plugins-check only once for a linux_amd64 binary
   -
     id: plugin-check
     mod_timestamp: '{{ .CommitTimestamp }}'
     hooks:
       post:
         # This will check plugin compatibility by making sure packer can load the binary
-        - cmd: packer-plugin-check -load={{ .Name }}
+        - cmd: packer-plugins-check -load={{ .Name }}
           dir: "{{ dir .Path}}"
     flags:
       - -trimpath #removes all file system paths from the compiled executable
@@ -40,7 +40,7 @@ builds:
       - linux
     goarch:
       - amd64
-    binary: '{{ .ProjectName }}_{{ .Version }}'
+    binary: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}_x5'
   - 
     mod_timestamp: '{{ .CommitTimestamp }}'
     flags:
@@ -62,12 +62,12 @@ builds:
         goarch: '386'
       - goos: linux
         goarch: amd64
-    binary: '{{ .ProjectName }}_{{ .Version }}'
+    binary: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}_x5'
 archives:
 - format: zip
-  name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+  name_template: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}_x5'
 checksum:
-  name_template: '{{ .ProjectName }}_{{ .Version }}_SHA256SUMS'
+  name_template: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}_x5_SHA256SUMS'
   algorithm: sha256
 signs:
   - artifacts: checksum
