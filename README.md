@@ -17,5 +17,5 @@ for how to create a new repository from this template on GitHub.
 
 ## Requirements
 
--	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= 0.1.0
+-	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= 0.0.7
 -	[Go](https://golang.org/doc/install) >= 1.15

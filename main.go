@@ -6,6 +6,7 @@ import (
 	"packer-plugin-scaffolding/builder/scaffolding"
 	scaffoldingPP "packer-plugin-scaffolding/post-processor/scaffolding"
 	scaffoldingProv "packer-plugin-scaffolding/provisioner/scaffolding"
+	scaffoldingData "packer-plugin-scaffolding/datasource/scaffolding"
 
 	"github.com/hashicorp/packer-plugin-sdk/plugin"
 	"github.com/hashicorp/packer-plugin-sdk/version"
@@ -30,9 +31,10 @@ func init() {
 
 func main() {
 	pps := plugin.NewSet()
-	pps.RegisterBuilder("scaffolding-builder", new(scaffolding.Builder))
-	pps.RegisterProvisioner("scaffolding-provisioner", new(scaffoldingProv.Provisioner))
-	pps.RegisterPostProcessor("scaffolding-post-processor", new(scaffoldingPP.PostProcessor))
+	pps.RegisterBuilder("my-builder", new(scaffolding.Builder))
+	pps.RegisterProvisioner("my-provisioner", new(scaffoldingProv.Provisioner))
+	pps.RegisterPostProcessor("my-post-processor", new(scaffoldingPP.PostProcessor))
+	pps.RegisterDatasource("my-datasource", new(scaffoldingData.Datasource))
 	pps.SetVersion(PluginVersion)
 	err := pps.Run()
 	if err != nil {
