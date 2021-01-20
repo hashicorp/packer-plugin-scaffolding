@@ -4,30 +4,27 @@ import (
 	"fmt"
 	"os"
 	"packer-plugin-scaffolding/builder/scaffolding"
+	scaffoldingData "packer-plugin-scaffolding/datasource/scaffolding"
 	scaffoldingPP "packer-plugin-scaffolding/post-processor/scaffolding"
 	scaffoldingProv "packer-plugin-scaffolding/provisioner/scaffolding"
-	scaffoldingData "packer-plugin-scaffolding/datasource/scaffolding"
 
 	"github.com/hashicorp/packer-plugin-sdk/plugin"
 	"github.com/hashicorp/packer-plugin-sdk/version"
 )
 
 var (
-	// The main version number that is being run at the moment.
+	// Version is the main version number that is being run at the moment.
 	Version = "0.0.1"
 
-	// A pre-release marker for the Version. If this is "" (empty string)
-	// then it means that it is a final release. Otherwise, this is a pre-release
-	// such as "dev" (in development), "beta", "rc1", etc.
+	// VersionPrerelease is A pre-release marker for the Version. If this is ""
+	// (empty string) then it means that it is a final release. Otherwise, this
+	// is a pre-release such as "dev" (in development), "beta", "rc1", etc.
 	VersionPrerelease = "dev"
+
+	// PluginVersion is used by the plugin set to allow Packer to recognize
+	// what version this plugin is.
+	PluginVersion = version.InitializePluginVersion(Version, VersionPrerelease)
 )
-
-var PluginVersion *version.PluginVersion
-
-func init() {
-	PluginVersion = version.InitializePluginVersion(
-		Version, VersionPrerelease)
-}
 
 func main() {
 	pps := plugin.NewSet()
