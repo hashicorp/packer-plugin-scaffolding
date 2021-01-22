@@ -4,16 +4,9 @@ env:
   - CGO_ENABLED=0
 before:
   hooks:
-    # You may remove this if you don't use go modules.
-    - go mod download
-
     # We strongly recommend running tests to catch any regression before release. 
     # Even though, this an optional step.
     - go test ./...
-    
-    # If you need to release binaries compatible with a previous version, please update the "latest" tag with that version 
-    # to properly check the compatibility.
-    - go get github.com/hashicorp/packer@latest 
 
     # You may remove this if you generate these on your own
     - go install github.com/hashicorp/packer/cmd/mapstructure-to-hcl2
