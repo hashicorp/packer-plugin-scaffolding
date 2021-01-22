@@ -1,4 +1,4 @@
-//go:generate mapstructure-to-hcl2 -type Config,DatasourceOutPut
+//go:generate mapstructure-to-hcl2 -type Config,DatasourceOutput
 package scaffolding
 
 import (
@@ -16,7 +16,7 @@ type Datasource struct {
 	config Config
 }
 
-type DatasourceOutPut struct {
+type DatasourceOutput struct {
 	Foo string `mapstructure:"foo"`
 	Bar string `mapstructure:"bar"`
 }
@@ -34,11 +34,11 @@ func (d *Datasource) Configure(raws ...interface{}) error {
 }
 
 func (d *Datasource) OutputSpec() hcldec.ObjectSpec {
-	return (&DatasourceOutPut{}).FlatMapstructure().HCL2Spec()
+	return (&DatasourceOutput{}).FlatMapstructure().HCL2Spec()
 }
 
 func (d *Datasource) Execute() (cty.Value, error) {
-	output := DatasourceOutPut{
+	output := DatasourceOutput{
 		Foo: "foo-value",
 		Bar: "bar-value",
 	}
