@@ -33,7 +33,7 @@ builds:
       - linux
     goarch:
       - amd64
-    binary: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}_x5'
+    binary: '{{ .ProjectName }}_v{{ .Version }}_x{{ .Env.API_VERSION }}_{{ .Os }}_{{ .Arch }}'
   - 
     mod_timestamp: '{{ .CommitTimestamp }}'
     flags:
@@ -55,12 +55,12 @@ builds:
         goarch: '386'
       - goos: linux
         goarch: amd64
-    binary: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}_x5'
+    binary: '{{ .ProjectName }}_v{{ .Version }}_x{{ .Env.API_VERSION }}_{{ .Os }}_{{ .Arch }}'
 archives:
 - format: zip
-  name_template: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}_x5'
+  name_template: '{{ .ProjectName }}_v{{ .Version }}_x{{ .Env.API_VERSION }}_{{ .Os }}_{{ .Arch }}'
 checksum:
-  name_template: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}_x5_SHA256SUMS'
+  name_template: '{{ .ProjectName }}_v{{ .Version }}_x{{ .Env.API_VERSION }}_SHA256SUMS'
   algorithm: sha256
 signs:
   - artifacts: checksum
