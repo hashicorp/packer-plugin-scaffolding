@@ -44,7 +44,7 @@ func (b *Builder) Run(ctx context.Context, ui packersdk.Ui, hook packersdk.Hook)
 	state.Put("hook", hook)
 	state.Put("ui", ui)
 
-	// Set the value of the generated data tha will become available to provisioners and post-processors
+	// Set the value of the generated data that will become available to provisioners and post-processors
 	state.Put("generated_data", map[string]interface{}{
 		"GeneratedMockData": "mock-build-data",
 	})
