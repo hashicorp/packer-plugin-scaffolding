@@ -46,6 +46,6 @@ func (p *Provisioner) Provision(_ context.Context, ui packer.Ui, _ packer.Commun
 	if err != nil {
 		return fmt.Errorf("Error interpolating comment: %s", err)
 	}
-	fmt.Printf(mock)
+	ui.Say(fmt.Sprintf("provisioner mock: %s", mock))
 	return nil
 }

@@ -27,7 +27,9 @@ type Builder struct {
 func (b *Builder) ConfigSpec() hcldec.ObjectSpec { return b.config.FlatMapstructure().HCL2Spec() }
 
 func (b *Builder) Prepare(raws ...interface{}) (generatedVars []string, warnings []string, err error) {
-	return nil, nil, nil
+	// Placeholder of generated data tha will become available to provisioners and post-processors
+	buildGeneratedData := []string{"GeneratedMockData"}
+	return buildGeneratedData, nil, nil
 }
 
 func (b *Builder) Run(ctx context.Context, ui packersdk.Ui, hook packersdk.Hook) (packersdk.Artifact, error) {
@@ -41,6 +43,11 @@ func (b *Builder) Run(ctx context.Context, ui packersdk.Ui, hook packersdk.Hook)
 	state := new(multistep.BasicStateBag)
 	state.Put("hook", hook)
 	state.Put("ui", ui)
+
+	// Set the value of the generated data tha will become available to provisioners and post-processors
+	state.Put("generated_data", map[string]interface{}{
+		"GeneratedMockData": "mock-build-data",
+	})
 
 	// Run!
 	b.runner = commonsteps.NewRunner(steps, b.config.PackerConfig, ui)

@@ -4,6 +4,7 @@ package scaffolding
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/hashicorp/hcl/v2/hcldec"
 	"github.com/hashicorp/packer-plugin-sdk/common"
@@ -40,5 +41,6 @@ func (p *PostProcessor) Configure(raws ...interface{}) error {
 }
 
 func (p *PostProcessor) PostProcess(ctx context.Context, ui packersdk.Ui, source packersdk.Artifact) (packersdk.Artifact, bool, bool, error) {
+	ui.Say(fmt.Sprintf("post-processor mock: %s", p.config.MockOption))
 	return source, true, true, nil
 }
