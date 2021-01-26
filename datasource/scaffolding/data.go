@@ -42,5 +42,5 @@ func (d *Datasource) Execute() (cty.Value, error) {
 		Foo: "foo-value",
 		Bar: "bar-value",
 	}
-	return hcl2helper.HCL2ValueFromConfig(output,d.OutputSpec()), nil
+	return hcl2helper.HCL2ValueFromConfig(output, d.OutputSpec()), nil
 }

@@ -41,11 +41,6 @@ func (p *Provisioner) Prepare(raws ...interface{}) error {
 }
 
 func (p *Provisioner) Provision(_ context.Context, ui packer.Ui, _ packer.Communicator, generatedData map[string]interface{}) error {
-	p.config.ctx.Data = generatedData
-	mock, err := interpolate.Render(p.config.MockOption, &p.config.ctx)
-	if err != nil {
-		return fmt.Errorf("Error interpolating comment: %s", err)
-	}
-	fmt.Printf(mock)
+	ui.Say(fmt.Sprintf("provisioner mock: %s", p.config.MockOption))
 	return nil
 }
