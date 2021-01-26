@@ -27,7 +27,7 @@ type Builder struct {
 func (b *Builder) ConfigSpec() hcldec.ObjectSpec { return b.config.FlatMapstructure().HCL2Spec() }
 
 func (b *Builder) Prepare(raws ...interface{}) (generatedVars []string, warnings []string, err error) {
-	// Placeholder of generated data tha will become available to provisioners and post-processors
+	// Placeholder for generated data that will become available to provisioners and post-processors
 	buildGeneratedData := []string{"GeneratedMockData"}
 	return buildGeneratedData, nil, nil
 }
