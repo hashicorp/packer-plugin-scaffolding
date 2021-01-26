@@ -27,7 +27,8 @@ type Builder struct {
 func (b *Builder) ConfigSpec() hcldec.ObjectSpec { return b.config.FlatMapstructure().HCL2Spec() }
 
 func (b *Builder) Prepare(raws ...interface{}) (generatedVars []string, warnings []string, err error) {
-	// Placeholder for generated data that will become available to provisioners and post-processors
+	// Return the placeholder for the generated data that will become available to provisioners and post-processors.
+	// If the builder doesn't generate any data, just return an empty slice of string: []string{}
 	buildGeneratedData := []string{"GeneratedMockData"}
 	return buildGeneratedData, nil, nil
 }
@@ -44,7 +45,8 @@ func (b *Builder) Run(ctx context.Context, ui packersdk.Ui, hook packersdk.Hook)
 	state.Put("hook", hook)
 	state.Put("ui", ui)
 
-	// Set the value of the generated data that will become available to provisioners and post-processors
+	// Set the value of the generated data that will become available to provisioners.
+	// To share the data with post-processors, use the StateData in the artifact.
 	state.Put("generated_data", map[string]interface{}{
 		"GeneratedMockData": "mock-build-data",
 	})
@@ -58,5 +60,10 @@ func (b *Builder) Run(ctx context.Context, ui packersdk.Ui, hook packersdk.Hook)
 		return nil, err.(error)
 	}
 
-	return &Artifact{}, nil
+	artifact := &Artifact{
+		// Add the builder generated data to the artifact StateData so that post-processors
+		// can access them.
+		StateData: map[string]interface{}{"generated_data": state.Get("generated_data")},
+	}
+	return artifact, nil
 }
