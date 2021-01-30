@@ -20,6 +20,7 @@ for how to create a new repository from this template on GitHub.
 ## Running Acceptance Tests
 
 Make sure to install the plugin with `go install .` and to have Packer installed locally.
+Then source the built binary to the plugin path with `ln -s $GOPATH/bin/packer-plugin-scaffolding ~/.packer.d/plugins/packer-plugin-scaffolding`
 Once everything needed is set up, run: 
 ```
 PACKER_ACC=1 go test -count 1 -v ./... -timeout=120m
