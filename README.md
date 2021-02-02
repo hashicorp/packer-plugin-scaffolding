@@ -30,5 +30,8 @@ This will run the acceptance tests for all plugins in this set.
 
 ## Requirements
 
--	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= 0.0.10
+-	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= 0.0.11
 -	[Go](https://golang.org/doc/install) >= 1.15
+
+## Packer Compatibility
+This scaffolding template is compatible with Packer >= v1.7.0 (to be released)
