@@ -30,7 +30,7 @@ This will run the acceptance tests for all plugins in this set.
 
 ## Requirements
 
--	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= 0.0.14
+-	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= v0.1.0
 -	[Go](https://golang.org/doc/install) >= 1.15
 
 ## Packer Compatibility
