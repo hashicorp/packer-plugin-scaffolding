@@ -19,9 +19,9 @@ for how to create a new repository from this template on GitHub.
 
 ## Running Acceptance Tests
 
-Make sure to install the plugin with `go install .` and to have Packer installed locally.
-Then source the built binary to the plugin path with `ln -s $GOPATH/bin/packer-plugin-scaffolding ~/.packer.d/plugins/packer-plugin-scaffolding`
-Once everything needed is set up, run:
+Make sure to install the plugin with `go build .` and to have Packer installed locally.  
+Then source the built binary to the plugin path with `cp packer-plugin-scaffolding ~/.packer.d/plugins/packer-plugin-scaffolding`  
+Once everything needed is set up, run:  
 ```
 PACKER_ACC=1 go test -count 1 -v ./... -timeout=120m
 ```
@@ -30,8 +30,8 @@ This will run the acceptance tests for all plugins in this set.
 
 ## Requirements
 
--	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= 0.0.11
+-	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= 0.0.14
 -	[Go](https://golang.org/doc/install) >= 1.15
 
 ## Packer Compatibility
-This scaffolding template is compatible with Packer >= v1.7.0 (to be released)
+This scaffolding template is compatible with Packer >= v1.7.0 
