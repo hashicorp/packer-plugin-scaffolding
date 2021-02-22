@@ -8,7 +8,7 @@ This repository is a template for a Packer multi-component plugin. It is intende
 - Docs (`docs/`)
 
 These folders contain boilerplate code that you will need to edit to create your own Packer multi-component plugin.
-A full guide to creating Packer plugins can be found at [Extending Packer](https://www.packer.io/docs/extending).
+A full guide to creating Packer plugins can be found at [Extending Packer](https://www.packer.io/docs/plugins/creation).
 
 In this repository you will also find a pre-defined GitHub Action configuration for the release workflow
 (`.goreleaser.yml` and `.github/workflows/release.yml`). The release workflow configuration makes sure the GitHub
