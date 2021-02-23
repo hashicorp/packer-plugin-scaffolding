@@ -1,15 +1,12 @@
----
-description: >
-  The Scaffolding Packer plugin is a basic template for creating a multi-component plugin consisting
-  of a builder, provisioner, and post-processor.
-page_time: Scaffolding - Overview
-sidebar_title: Scaffolding
----
-
 # Scaffolding Plugins
 
 <!--
   Include a short overview about the plugin.
+
+  This document is a great location for creating a table of contents for each
+  of the components the plugin may provide. This document should load automatically
+  when navigating to the docs directory for a plugin.
+
 -->
 
 The Scaffolding plugin is intended as a starting point for creating Packer plugins, containing:
@@ -25,17 +22,4 @@ The Scaffolding plugin is intended as a starting point for creating Packer plugi
 
 - [data source](/docs/datasources/datasource-name.mdx) - The scaffolding data source is used to
   export scaffolding data.
-
-<!--
-  The overview page is a good place to document shared configuration or special environment configuration
-  settings such as authentication, debugging guides, etc. Essentially any additional text that a user
-  should be aware of to successfully use the plugin.
-
-  Some additional sections include:
-
-  ### Authentication
-
-  ### Environment Variables
-
--->
 
