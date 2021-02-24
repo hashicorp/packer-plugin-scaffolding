@@ -1,6 +1,6 @@
 ## The Example Folder
  
-This folder must contain a fully working example for the plugin. The example must define the `required_plugins` block.
+This folder must contain a fully working example of the plugin usage. The example must define the `required_plugins` block.
 A pre-defined GitHub Action will run `packer init` and `packer build` against it and test your plugin with
 the latest version available of Packer.
 
