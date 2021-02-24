@@ -1,5 +1,8 @@
-name: web-platform
-on: [push]
+name: generate-docs-artifacts
+on:
+  push:
+    tags:
+      - "v*"
 jobs:
   snapshot-docs-artifacts:
     runs-on: ubuntu-latest
@@ -8,7 +11,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Node
         uses: actions/setup-node@v1
-      - run: npx @hashicorp/packer-plugin-docs-artifacts@0.0.0-alpha.3
+      - run: npx @hashicorp/packer-plugin-docs-artifacts@0.0.0-alpha.5
       - name: Git Config
         run: >
           git config user.name "GitHub Actions";
