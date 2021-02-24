@@ -1,11 +1,3 @@
----
-description: >
-  The Scaffolding Packer plugin is a basic template for creating a multi-component plugin consisting
-  of a builder, provisioner, and post-processor.
-page_time: Scaffolding - Overview
-sidebar_title: Scaffolding
----
-
 # Scaffolding Plugins
 
 <!--
@@ -38,4 +30,3 @@ The Scaffolding plugin is intended as a starting point for creating Packer plugi
   ### Environment Variables
 
 -->
-

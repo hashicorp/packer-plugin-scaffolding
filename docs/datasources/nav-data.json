@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Scaffolding",
+    "path": "datasource-name",
+    "filePath": "datasource-name.mdx"
+  },
+  {
+    "title": "Custom Subfolder Title",
+    "routes": [
+      {
+        "title": "Scaffolding Nested Index",
+        "path": "subfolder",
+        "filePath": "subfolder/index.mdx"
+      },
+      {
+        "title": "Another Nested File",
+        "path": "subfolder/some-file",
+        "filePath": "subfolder/some-file.mdx"
+      }
+    ]
+  }
+]

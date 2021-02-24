@@ -1,0 +1,49 @@
+name: web-platform
+on: [push]
+jobs:
+  snapshot-docs-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+      - run: node ./.github/workflows/_dev-snapshot-docs-artifacts.js
+      - name: Git Config
+        run: >
+          git config user.name "GitHub Actions";
+          git config user.email "actions@github.com";
+      - name: Commit, Push, Open PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: >
+          git fetch -a --unshallow;
+          LATEST_TAG=$(git describe --tags --abbrev=0);
+          TARGET_BRANCH="update-docs-artifacts-$LATEST_TAG";
+          PR_TITLE="Update docs for $LATEST_TAG";
+          REPO_NAME="$GITHUB_REPOSITORY";
+          DEFAULT_BRANCH=$(jq -r ".repository.default_branch" "$GITHUB_EVENT_PATH");
+          echo "GITHUB_EVENT_PATH: $GITHUB_EVENT_PATH";
+          echo "LATEST_TAG: $LATEST_TAG";
+          echo "TARGET_BRANCH: $TARGET_BRANCH";
+          echo "PR_TITLE: $PR_TITLE";
+          echo "REPO_NAME: $REPO_NAME";
+          echo "DEFAULT_BRANCH: $DEFAULT_BRANCH";
+          git checkout -b "$TARGET_BRANCH";
+          git add .;
+          git commit -m "Update docs artifacts";
+          echo "Pushing...";
+          git push -u origin "$TARGET_BRANCH" --force;
+          echo "Requesting PR...";
+          RESPONSE_CODE=$(curl -o .output -s -w "%{http_code}\n" \
+            --data "{\"title\":\"$PR_TITLE\", \"head\": \"$TARGET_BRANCH\", \"base\": \"$DEFAULT_BRANCH\"}" \
+            -X POST \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/$REPO_NAME/pulls");
+          PR_URL=$(jq -r ".html_url" .output);
+          curl -o .existing-pr -s \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/$REPO_NAME/pulls?head=$GITHUB_ACTOR:$TARGET_BRANCH";
+          EXISTING_PR_URL=$(jq -r ".[0].html_url" .existing-pr);
+          if [ "$PR_URL" == "null" ]; then echo "$EXISTING_PR_URL"; else echo "$PR_URL"; fi
