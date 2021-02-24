@@ -9,7 +9,8 @@ import (
 	"github.com/hashicorp/packer-plugin-sdk/common"
 	"github.com/hashicorp/packer-plugin-sdk/multistep"
 	"github.com/hashicorp/packer-plugin-sdk/multistep/commonsteps"
-	packersdk "github.com/hashicorp/packer-plugin-sdk/packer"
+	"github.com/hashicorp/packer-plugin-sdk/packer"
+	"github.com/hashicorp/packer-plugin-sdk/template/config"
 )
 
 const BuilderId = "scaffolding.builder"
@@ -27,16 +28,26 @@ type Builder struct {
 func (b *Builder) ConfigSpec() hcldec.ObjectSpec { return b.config.FlatMapstructure().HCL2Spec() }
 
 func (b *Builder) Prepare(raws ...interface{}) (generatedVars []string, warnings []string, err error) {
+	err = config.Decode(&b.config, &config.DecodeOpts{
+		PluginType:  "packer.builder.scaffolding",
+		Interpolate: true,
+	}, raws...)
+	if err != nil {
+		return nil, nil, err
+	}
 	// Return the placeholder for the generated data that will become available to provisioners and post-processors.
 	// If the builder doesn't generate any data, just return an empty slice of string: []string{}
 	buildGeneratedData := []string{"GeneratedMockData"}
 	return buildGeneratedData, nil, nil
 }
 
-func (b *Builder) Run(ctx context.Context, ui packersdk.Ui, hook packersdk.Hook) (packersdk.Artifact, error) {
+func (b *Builder) Run(ctx context.Context, ui packer.Ui, hook packer.Hook) (packer.Artifact, error) {
 	steps := []multistep.Step{}
 
 	steps = append(steps,
+		&StepSayConfig{
+			MockConfig: b.config.MockOption,
+		},
 		new(commonsteps.StepProvision),
 	)
 
