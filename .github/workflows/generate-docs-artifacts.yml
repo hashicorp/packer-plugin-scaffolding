@@ -1,3 +1,6 @@
+# This GitHub action can generate documentation artifacts for a release when a tag is created.
+# Currently its setup to run on any tag that matches the pattern "v*" (ie. v0.1.0).
+
 name: generate-docs-artifacts
 on:
   push:
