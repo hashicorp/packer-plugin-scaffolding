@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Scaffolding",
+    "path": "builder-name",
+    "filePath": "builder-name.mdx"
+  },
+  {
+    "title": "subfolder",
+    "routes": [
+      {
+        "title": "Scaffolding Nested File",
+        "path": "subfolder/example-nested-file",
+        "filePath": "subfolder/example-nested-file.mdx"
+      },
+      {
+        "title": "Scaffolding Nested Index File",
+        "path": "subfolder",
+        "filePath": "subfolder/index.mdx"
+      }
+    ]
+  }
+]
