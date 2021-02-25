@@ -32,7 +32,7 @@ func (s *StepSayConfig) Run(_ context.Context, state multistep.StateBag) multist
 }
 
 // Cleanup can be used to clean up any artifact created by the step.
-// A step's clean up always run at the end of a build.
+// A step's clean up always run at the end of a build, regardless of whether provisioning succeeds or fails.
 func (s *StepSayConfig) Cleanup(_ multistep.StateBag) {
 	// Nothing to clean
 }
