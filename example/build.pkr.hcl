@@ -2,7 +2,7 @@ packer {
   required_plugins {
     scaffolding = {
       version = ">=v0.1.0"
-      source = "github.com/hashicorp/scaffolding"
+      source  = "github.com/hashicorp/scaffolding"
     }
   }
 }
