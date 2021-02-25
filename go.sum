@@ -38,6 +38,7 @@ github.com/1and1/oneandone-cloudserver-sdk-go v1.0.1 h1:RMTyvS5bjvSWiUcfqfr/E2px
 github.com/1and1/oneandone-cloudserver-sdk-go v1.0.1/go.mod h1:61apmbkVJH4kg+38ftT+/l0XxdUCVnHggqcOTqZRSEE=
 github.com/Azure/azure-sdk-for-go v40.5.0+incompatible h1:CVQNKuUepSFBo6BW6gM1J9slPHLRcjn6vaw+j+causw=
 github.com/Azure/azure-sdk-for-go v40.5.0+incompatible/go.mod h1:9XXNKU+eRnpl9moKnB4QOLf1HestfXbmab5FXxiDBjc=
+github.com/Azure/go-autorest v14.2.0+incompatible h1:V5VMDjClD3GiElqLWO7mz2MxNAK/vTfRHdAubSIPRgs=
 github.com/Azure/go-autorest v14.2.0+incompatible/go.mod h1:r+4oMnoxhatjLLJ6zxSWATqVooLgysK6ZNox3g/xq24=
 github.com/Azure/go-autorest/autorest v0.9.0/go.mod h1:xyHB1BMZT0cuDHU7I0+g046+BFDTQ8rEZB0s4Yfa6bI=
 github.com/Azure/go-autorest/autorest v0.9.3/go.mod h1:GsRuLYvwzLjjjRoWEIyMUaYq8GNUx2nRB378IPt/1p0=
@@ -62,6 +63,7 @@ github.com/Azure/go-autorest/autorest/to v0.3.0 h1:zebkZaadz7+wIQYgC7GXaz3Wb28yK
 github.com/Azure/go-autorest/autorest/to v0.3.0/go.mod h1:MgwOyqaIuKdG4TL/2ywSsIWKAfJfgHDo8ObuUk3t5sA=
 github.com/Azure/go-autorest/autorest/validation v0.2.0 h1:15vMO4y76dehZSq7pAaOLQxC6dZYsSrj2GQpflyM/L4=
 github.com/Azure/go-autorest/autorest/validation v0.2.0/go.mod h1:3EEqHnBxQGHXRYq3HT1WyXAvT7LLY3tl70hw6tQIbjI=
+github.com/Azure/go-autorest/autorest/validation v0.3.1 h1:AgyqjAd94fwNAoTjl/WQXg4VvFeRFpO+UhNyRXqF1ac=
 github.com/Azure/go-autorest/autorest/validation v0.3.1/go.mod h1:yhLgjC0Wda5DYXl6JAsWyUe4KVNffhoDhG0zVzUMo3E=
 github.com/Azure/go-autorest/logger v0.1.0 h1:ruG4BSDXONFRrZZJ2GUXDiUyVpayPmb1GnWeHDdaNKY=
 github.com/Azure/go-autorest/logger v0.1.0/go.mod h1:oExouG+K6PryycPJfVSxi/koC6LSNgds39diKLz7Vrc=
@@ -154,9 +156,11 @@ github.com/digitalocean/go-libvirt v0.0.0-20190626172931-4d226dd6c437 h1:phR13sh
 github.com/digitalocean/go-libvirt v0.0.0-20190626172931-4d226dd6c437/go.mod h1:PRcPVAAma6zcLpFd4GZrjR/MRpood3TamjKI2m/z/Uw=
 github.com/digitalocean/go-libvirt v0.0.0-20201209184759-e2a69bcd5bd1/go.mod h1:QS1XzqZLcDniNYrN7EZefq3wIyb/M2WmJbql4ZKoc1Q=
 github.com/digitalocean/go-libvirt v0.0.0-20210108193637-3a8ae49ba8cd/go.mod h1:gtar3MgGsIO64GgphCHw1cbyxSI6qEuTIm9+izMmlfk=
+github.com/digitalocean/go-libvirt v0.0.0-20210112203132-25518eb2c840 h1:F3RVNV8SLLNhkNFcbDTgD3wAPMcrMJW6xjjI0JXy9z8=
 github.com/digitalocean/go-libvirt v0.0.0-20210112203132-25518eb2c840/go.mod h1:gtar3MgGsIO64GgphCHw1cbyxSI6qEuTIm9+izMmlfk=
 github.com/digitalocean/go-qemu v0.0.0-20181112162955-dd7bb9c771b8 h1:N7nH2py78LcMqYY3rZjjrsX6N7uCN7sjvaosgpXN9Ow=
 github.com/digitalocean/go-qemu v0.0.0-20181112162955-dd7bb9c771b8/go.mod h1:/YnlngP1PARC0SKAZx6kaAEMOp8bNTQGqS+Ka3MctNI=
+github.com/digitalocean/go-qemu v0.0.0-20201211181942-d361e7b4965f h1:BYkBJhHxUJJn27mhqfqWycWaEOWv9JQqLgQ2pOFJMqE=
 github.com/digitalocean/go-qemu v0.0.0-20201211181942-d361e7b4965f/go.mod h1:y4Eq3ZfZQFWQwVyW0qvgo5seXUIq2C7BlHsdE+xtXL4=
 github.com/digitalocean/godo v1.11.1 h1:OsTh37YFKk+g6DnAOrkXJ9oDArTkRx5UTkBJ2EWAO38=
 github.com/digitalocean/godo v1.11.1/go.mod h1:h6faOIcZ8lWIwNQ+DN7b3CgX4Kwby5T+nbpNqkUIozU=
@@ -248,6 +252,7 @@ github.com/google/go-cmp v0.5.1/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/
 github.com/google/go-cmp v0.5.2 h1:X2ev0eStA3AbceY54o37/0PQ/UWqKEiiO2dKL5OPaFM=
 github.com/google/go-cmp v0.5.2/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-github/v33 v33.0.0/go.mod h1:GMdDnVZY/2TsWgp/lkYnpSAh6TrzhANBBwm6k6TTEXg=
+github.com/google/go-github/v33 v33.0.1-0.20210113204525-9318e629ec69 h1:zL0/Ug5CMhV0XRb3A6vnK1SQ9kJM3VIyRxPQ5t9w8Bg=
 github.com/google/go-github/v33 v33.0.1-0.20210113204525-9318e629ec69/go.mod h1:GMdDnVZY/2TsWgp/lkYnpSAh6TrzhANBBwm6k6TTEXg=
 github.com/google/go-querystring v1.0.0 h1:Xkwi/a1rcvNg1PPYe5vI8GbeBY/jrVuDX5ASuANWTrk=
 github.com/google/go-querystring v1.0.0/go.mod h1:odCYkC5MyYFN7vkCjXpyrEuKhc/BUO6wN/zVPAxq5ck=
@@ -375,6 +380,7 @@ github.com/hashicorp/packer v1.6.7-0.20210126105722-aef4ced967ec/go.mod h1:2+Vo/
 github.com/hashicorp/packer v1.6.7-0.20210208125835-f616955ebcb6/go.mod h1:7f5ZpTTRG53rQ58BcTADuTnpiBcB3wapuxl4sF2sGMM=
 github.com/hashicorp/packer v1.6.7-0.20210217093213-201869d627bf h1:ldeaYyjgTcvSxpSM7/3czTJxWbLm7NUze6XoXKTx8XE=
 github.com/hashicorp/packer v1.6.7-0.20210217093213-201869d627bf/go.mod h1:+EWPPcqee4h8S/y913Dnta1eJkgiqsGXBQgB75A2qV0=
+github.com/hashicorp/packer v1.7.0 h1:k4v3DO3NjoV08W2Y+VmydVJPbVtRjPo4aQhqPGf5JjE=
 github.com/hashicorp/packer v1.7.0/go.mod h1:3KRJcwOctl2JaAGpQMI1bWQRArfWNWqcYjO6AOsVVGQ=
 github.com/hashicorp/packer-plugin-sdk v0.0.6/go.mod h1:Nvh28f+Jmpp2rcaN79bULTouNkGNDRfHckhHKTAXtyU=
 github.com/hashicorp/packer-plugin-sdk v0.0.7-0.20210111224258-fd30ebb797f0/go.mod h1:YdWTt5w6cYfaQG7IOi5iorL+3SXnz8hI0gJCi8Db/LI=
@@ -417,6 +423,7 @@ github.com/joyent/triton-go v0.0.0-20180628001255-830d2b111e62 h1:JHCT6xuyPUrbbg
 github.com/joyent/triton-go v0.0.0-20180628001255-830d2b111e62/go.mod h1:U+RSyWxWd04xTqnuOQxnai7XGS2PrPY2cfGoDKtMHjA=
 github.com/json-iterator/go v1.1.6 h1:MrUvLMLTMxbqFJ9kzlvat/rYZqZnW3u4wkLzWTaFwKs=
 github.com/json-iterator/go v1.1.6/go.mod h1:+SdeFBvtyEkXs7REEP0seUULqWtbJapLOCVDaaPEHmU=
+github.com/json-iterator/go v1.1.10 h1:Kz6Cvnvv2wGdaG/V8yMvfkmNiXq9Ya2KUv4rouJJr68=
 github.com/json-iterator/go v1.1.10/go.mod h1:KdQUCv79m/52Kvf8AW2vK1V8akMuk1QjK/uOdHXbAo4=
 github.com/jstemmer/go-junit-report v0.0.0-20190106144839-af01ea7f8024/go.mod h1:6v2b51hI/fHJwM22ozAgKL4VKDeJcHhJFhtBdhmNjmU=
 github.com/jstemmer/go-junit-report v0.9.1 h1:6QPYqodiu3GuPL+7mfx+NwDdp2eTkp9IfEUpgAwUN0o=
@@ -428,11 +435,13 @@ github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+o
 github.com/klauspost/compress v0.0.0-20160131094358-f86d2e6d8a77 h1:rJnR80lkojFgjdg/oQPhbZoY8t8uM51XMz8DrJrjabk=
 github.com/klauspost/compress v0.0.0-20160131094358-f86d2e6d8a77/go.mod h1:RyIbtBH6LamlWaDj8nUwkbUhJ87Yi3uG0guNDohfE1A=
 github.com/klauspost/compress v1.11.6/go.mod h1:aoV0uJVorq1K+umq18yTdKaF57EivdYsUV+/s2qKfXs=
+github.com/klauspost/compress v1.11.7 h1:0hzRabrMN4tSTvMfnL3SCv1ZGeAP23ynzodBgaHeMeg=
 github.com/klauspost/compress v1.11.7/go.mod h1:aoV0uJVorq1K+umq18yTdKaF57EivdYsUV+/s2qKfXs=
 github.com/klauspost/cpuid v0.0.0-20160106104451-349c67577817 h1:/7pPahIC+GoCm/euDCi2Pm29bAj9tc6TcK4Zcc8D3WI=
 github.com/klauspost/cpuid v0.0.0-20160106104451-349c67577817/go.mod h1:Pj4uuM528wm8OyEC2QMXAi2YiTZ96dNQPGgoMS4s3ek=
 github.com/klauspost/crc32 v0.0.0-20160114101742-999f3125931f h1:UD9YLTi2aBhdOOThzatodQ/pGd9nd5255swS+UzHZj4=
 github.com/klauspost/crc32 v0.0.0-20160114101742-999f3125931f/go.mod h1:+ZoRqAPRLkC4NPOvfYeR5KNOrY6TD+/sAC3HXPZgDYg=
+github.com/klauspost/crc32 v1.2.0 h1:0VuyqOCruD33/lJ/ojXNvzVyl8Zr5zdTmj9l9qLZ86I=
 github.com/klauspost/crc32 v1.2.0/go.mod h1:+ZoRqAPRLkC4NPOvfYeR5KNOrY6TD+/sAC3HXPZgDYg=
 github.com/klauspost/pgzip v0.0.0-20151221113845-47f36e165cec h1:PYqF3Tiz2W2Ag0ezyDhAobWDWlrFv7U+qct4spLeDBM=
 github.com/klauspost/pgzip v0.0.0-20151221113845-47f36e165cec/go.mod h1:Ch1tH69qFZu15pkjo5kYi6mth2Zzwzt50oCQKQE9RUs=
@@ -688,6 +697,7 @@ golang.org/x/mobile v0.0.0-20190312151609-d3739f865fa6/go.mod h1:z+o9i4GpDbdi3rU
 golang.org/x/mobile v0.0.0-20190719004257-d2bd2a29d028/go.mod h1:E/iHnbuqvinMTCcRqshq8CkpyQDoeVncDDYHnLhea+o=
 golang.org/x/mobile v0.0.0-20191130191448-5c0e7e404af8 h1:9w7mvrikkrG9zFfEJfuFe08FVKrg8Yi0ePhOdGAKpUw=
 golang.org/x/mobile v0.0.0-20191130191448-5c0e7e404af8/go.mod h1:p895TfNkDgPEmEQrNiOtIl3j98d/tGU95djDj7NfyjQ=
+golang.org/x/mobile v0.0.0-20201208152944-da85bec010a2 h1:3HADozU50HyrJ2jklLtr3xr0itFkz9u4LxCJhqKVdjI=
 golang.org/x/mobile v0.0.0-20201208152944-da85bec010a2/go.mod h1:skQtrUTUwhdJvXM/2KKJzY8pDgNr9I/FOMqDVRPBUS4=
 golang.org/x/mod v0.0.0-20190513183733-4bf6d317e70e/go.mod h1:mXi4GBBbnImb6dmsKGUJ2LatrhH/nqhxcFungHvyanc=
 golang.org/x/mod v0.1.0/go.mod h1:0QHyrYULN0/3qlju5TqG8bIK38QM8yzMo5ekMj3DlcY=
@@ -974,6 +984,7 @@ gopkg.in/cheggaaa/pb.v1 v1.0.27/go.mod h1:V/YB90LKu/1FcN3WVnfiiE5oMCibMjukxqG/qS
 gopkg.in/errgo.v2 v2.1.0/go.mod h1:hNsd1EY+bozCKY1Ytp96fpM3vjJbqLJn88ws8XvfDNI=
 gopkg.in/ini.v1 v1.42.0 h1:7N3gPTt50s8GuLortA00n8AqRTk75qOP98+mTPpgzRk=
 gopkg.in/ini.v1 v1.42.0/go.mod h1:pNLf8WUiyNEtQjuu5G5vTm06TEv9tsIgeAvK8hOrP4k=
+gopkg.in/ini.v1 v1.62.0 h1:duBzk771uxoUuOlyRLkHsygud9+5lrlGjdFBb4mSKDU=
 gopkg.in/ini.v1 v1.62.0/go.mod h1:pNLf8WUiyNEtQjuu5G5vTm06TEv9tsIgeAvK8hOrP4k=
 gopkg.in/jarcoal/httpmock.v1 v1.0.0-20181117152235-275e9df93516/go.mod h1:d3R+NllX3X5e0zlG1Rful3uLvsGC/Q3OHut5464DEQw=
 gopkg.in/square/go-jose.v2 v2.3.1 h1:SK5KegNXmKmqE342YYN2qPHEnUYeoMiXXl1poUlI+o4=

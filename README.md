@@ -1,11 +1,12 @@
 # Packer Plugin Scaffolding
 
 This repository is a template for a Packer multi-component plugin. It is intended as a starting point for creating Packer plugins, containing:
-- A builder (`builder/scaffolding`)
-- A provisioner (`provisioner/scaffolding`)
-- A post-processor (`post-processor/scaffolding`)
-- A data source (`datasource/scaffolding`)
-- Docs (`docs/`)
+- A builder ([builder/scaffolding](builder/scaffolding))
+- A provisioner ([provisioner/scaffolding](provisioner/scaffolding))
+- A post-processor ([post-processor/scaffolding](provisioner/scaffolding))
+- A data source ([datasource/scaffolding](datasource/scaffolding))
+- Docs ([docs](docs))
+- A working example ([example](example))
 
 These folders contain boilerplate code that you will need to edit to create your own Packer multi-component plugin.
 A full guide to creating Packer plugins can be found at [Extending Packer](https://www.packer.io/docs/plugins/creation).
