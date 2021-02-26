@@ -33,12 +33,12 @@ This will run the acceptance tests for all plugins in this set.
 
 Documentation for a plugin is maintained within the `docs` directory and served on GitHub.
 To include plugin docs on Packer.io a GitHub workflow has been added to this template repository that
-can be used generate a documentation structure that can be consumed remote by Packer.io.
+can be used generate a documentation structure that can be consumed remotely by Packer.io.
 See the workflow [generated-docs-artifacts.yml](.github/workflows/generate-dos-artifacts.yml)
 
-After merging the generated files to the default branch for the plugin repository: main or master
+After merging the generated files to the default branch for the plugin repository
 
-A one time pull-request will needs to be opened against [hashicorp/packer](https://github.com/hashicorp/packer) to register the plugin docs.
+you will need to open a one time pull-request against [hashicorp/packer](https://github.com/hashicorp/packer) to register the plugin docs.
 This is done by adding the block below for the respective plugin to the file `website/data/docs-remote-navigation.js`.
 
 ```json
