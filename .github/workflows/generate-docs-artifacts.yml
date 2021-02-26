@@ -43,7 +43,7 @@ jobs:
       - name: Create Pull Request with Generated Doc Artifacts
         uses: peter-evans/create-pull-request@v3
         with:
-	    # See Action inputs https://github.com/peter-evans/create-pull-request#action-inputs
+          # See Action inputs https://github.com/peter-evans/create-pull-request#action-inputs
           token: ${{ secrets.GITHUB_TOKEN }}
           # The base branch to open a pull-request against. By default the base branch matches
           # the checked out branch. If not the default branch it should be adjust to main or master.
