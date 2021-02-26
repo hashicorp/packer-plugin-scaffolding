@@ -1,0 +1,49 @@
+# This is a manually triggered action workflow.
+# It uses Packer at a certain version to init, validate and build
+# an example configuration in a folder.
+# This action is compatible with Packer v1.7.0 or later.
+name: test plugin example
+
+on:
+  workflow_dispatch:
+    inputs:
+      logs:
+        description: 'Set 1 to activate full logs'
+        required: false
+        default: '0'
+      folder:
+        description: 'Example folder'
+        required: false
+        default: './example'
+      packerVersion:
+        description: 'Packer version'
+        required: false
+        default: 'latest'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: init and build example
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.15
+
+      - name: Install Packer at ${{ github.event.inputs.packerVersion }}
+        run: go get github.com/hashicorp/packer@${{ github.event.inputs.packerVersion }}
+
+      - name: Init
+        working-directory: ${{ github.event.inputs.folder }}
+        run: packer init .
+
+      - name: Validate
+        working-directory: ${{ github.event.inputs.folder }}
+        run: PACKER_LOG=${{ github.event.inputs.logs }} packer validate .
+
+      - name: Build
+        working-directory: ${{ github.event.inputs.folder }}
+        run: PACKER_LOG=${{ github.event.inputs.logs }} packer build .
