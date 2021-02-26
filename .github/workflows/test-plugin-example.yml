@@ -1,5 +1,5 @@
 # This is a manually triggered action workflow.
-# It uses Packer at a certain version to init, validate and build
+# It uses Packer at latest version to init, validate and build
 # an example configuration in a folder.
 # This action is compatible with Packer v1.7.0 or later.
 name: test plugin example
@@ -15,10 +15,6 @@ on:
         description: 'Example folder'
         required: false
         default: './example'
-      packerVersion:
-        description: 'Packer version'
-        required: false
-        default: 'latest'
 
 jobs:
   build:
@@ -28,22 +24,24 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.15
-
-      - name: Install Packer at ${{ github.event.inputs.packerVersion }}
-        run: go get github.com/hashicorp/packer@${{ github.event.inputs.packerVersion }}
-
       - name: Init
-        working-directory: ${{ github.event.inputs.folder }}
-        run: packer init .
+        uses: hashicorp/packer-github-actions@document_logs
+        with:
+          working_directory: ${{ github.event.inputs.folder }}
+          command: init
 
       - name: Validate
-        working-directory: ${{ github.event.inputs.folder }}
-        run: PACKER_LOG=${{ github.event.inputs.logs }} packer validate .
+        uses: hashicorp/packer-github-actions@document_logs
+        with:
+          working_directory: ${{ github.event.inputs.folder }}
+          command: validate
+        env:
+          PACKER_LOG: ${{ github.event.inputs.logs }}
 
       - name: Build
-        working-directory: ${{ github.event.inputs.folder }}
-        run: PACKER_LOG=${{ github.event.inputs.logs }} packer build .
+        uses: hashicorp/packer-github-actions@document_logs
+        with:
+          working_directory: ${{ github.event.inputs.folder }}
+          command: build
+        env:
+          PACKER_LOG: ${{ github.event.inputs.logs }}
