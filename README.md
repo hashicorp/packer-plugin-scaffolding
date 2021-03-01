@@ -91,7 +91,7 @@ This is done by adding the block below for the respective plugin to the file `we
 # Requirements
 
 -	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= v0.1.0
--	[Go](https://golang.org/doc/install) >= 1.15
+-	[Go](https://golang.org/doc/install) >= 1.16
 
 ## Packer Compatibility
 This scaffolding template is compatible with Packer >= v1.7.0
