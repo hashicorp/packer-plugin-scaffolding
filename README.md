@@ -29,6 +29,15 @@ PACKER_ACC=1 go test -count 1 -v ./... -timeout=120m
 
 This will run the acceptance tests for all plugins in this set.
 
+## Test Plugin Example Action
+
+This scaffolding configures a [manually triggered plugin test action](/.github/workflows/test-plugin-example.yml). 
+By default, the action will run Packer at the latest version to init, validate, and build the example configuration 
+within the [example](example) folder. This is useful to quickly test a basic template of your plugin against Packer.
+
+The example must contain the `required_plugins` block and require your plugin at the latest or any other released version.
+This will help test and validate plugin releases.
+
 ## Registering Documentation on Packer.io
 
 Documentation for a plugin is maintained within the `docs` directory and served on GitHub.
