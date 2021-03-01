@@ -25,13 +25,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Init
-        uses: hashicorp/packer-github-actions@document_logs
+        uses: hashicorp/packer-github-actions@master
         with:
           working_directory: ${{ github.event.inputs.folder }}
           command: init
 
       - name: Validate
-        uses: hashicorp/packer-github-actions@document_logs
+        uses: hashicorp/packer-github-actions@master
         with:
           working_directory: ${{ github.event.inputs.folder }}
           command: validate
@@ -39,7 +39,7 @@ jobs:
           PACKER_LOG: ${{ github.event.inputs.logs }}
 
       - name: Build
-        uses: hashicorp/packer-github-actions@document_logs
+        uses: hashicorp/packer-github-actions@master
         with:
           working_directory: ${{ github.event.inputs.folder }}
           command: build
