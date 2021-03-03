@@ -31,8 +31,8 @@ This will run the acceptance tests for all plugins in this set.
 
 ## Test Plugin Example Action
 
-This scaffolding configures a [manually triggered plugin test action](/.github/workflows/test-plugin-example.yml). 
-By default, the action will run Packer at the latest version to init, validate, and build the example configuration 
+This scaffolding configures a [manually triggered plugin test action](/.github/workflows/test-plugin-example.yml).
+By default, the action will run Packer at the latest version to init, validate, and build the example configuration
 within the [example](example) folder. This is useful to quickly test a basic template of your plugin against Packer.
 
 The example must contain the `required_plugins` block and require your plugin at the latest or any other released version.
@@ -48,7 +48,7 @@ See the workflow [generated-docs-artifacts.yml](.github/workflows/generate-dos-a
 After merging the generated files to the default branch for the plugin repository
 
 you will need to open a one time pull-request against [hashicorp/packer](https://github.com/hashicorp/packer) to register the plugin docs.
-This is done by adding the block below for the respective plugin to the file `website/data/docs-remote-navigation.js`.
+This is done by adding the block below for the respective plugin to the file [website/data/docs-remote-navigation.js](https://github.com/hashicorp/packer/blob/master/website/data/docs-remote-plugins.json).
 
 ```json
 {
@@ -56,7 +56,7 @@ This is done by adding the block below for the respective plugin to the file `we
    "path": "scaffolding",
    "repo": "hashicorp/packer-plugin-scaffolding",
    "branch": "main",
-   "artifaceDir": ".doc-artifacts"
+   "artifactDir": ".doc-artifacts"
  }
 ```
 
@@ -76,7 +76,7 @@ The generated files will be placed under `PLUGIN_ROOT/.doc-artifacts`; this dire
 and respective navigation information needed for including the plugin docs under packer.io/docs/
 
 A one time pull-request will needs to be opened against [hashicorp/packer](https://github.com/hashicorp/packer) to register the plugin docs.
-This is done by adding the block below for the respective plugin to the file `website/data/docs-remote-navigation.js`.
+This is done by adding the block below for the respective plugin to the file [website/data/docs-remote-navigation.js](https://github.com/hashicorp/packer/blob/master/website/data/docs-remote-plugins.json).
 
 ```json
 {
@@ -84,7 +84,7 @@ This is done by adding the block below for the respective plugin to the file `we
    "path": "scaffolding",
    "repo": "hashicorp/packer-plugin-scaffolding",
    "branch": "main",
-   "artifaceDir": ".doc-artifacts"
+   "artifactDir": ".doc-artifacts"
  }
 ```
 
