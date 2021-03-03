@@ -43,7 +43,7 @@ This will help test and validate plugin releases.
 Documentation for a plugin is maintained within the `docs` directory and served on GitHub.
 To include plugin docs on Packer.io a GitHub workflow has been added to this template repository that
 can be used generate a documentation structure that can be consumed remotely by Packer.io.
-See the workflow [generated-docs-artifacts.yml](.github/workflows/generate-dos-artifacts.yml)
+See the workflow [generated-docs-artifacts.yml](.github/workflows/generate-docs-artifacts.yml)
 
 After merging the generated files to the default branch for the plugin repository
 
