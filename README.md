@@ -18,6 +18,16 @@ release artifacts are created with the correct binaries and naming conventions.
 Please see the [GitHub template repository documentation](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 for how to create a new repository from this template on GitHub.
 
+## Packer plugin projects
+
+Here's a non exaustive list of Packer plugins that you can checkout:
+
+* github.com/hashicorp/packer-plugin-docker
+* github.com/exoscale/packer-plugin-exoscale
+* github.com/sylviamoss/packer-plugin-comment
+
+Looking at their code will give you good examples.
+
 ## Running Acceptance Tests
 
 Make sure to install the plugin with `go build .` and to have Packer installed locally.
