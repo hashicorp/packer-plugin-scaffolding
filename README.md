@@ -22,9 +22,9 @@ for how to create a new repository from this template on GitHub.
 
 Here's a non exaustive list of Packer plugins that you can checkout:
 
-* [github.com/hashicorp/packer-plugin-docker](github.com/hashicorp/packer-plugin-docker)
-* [github.com/exoscale/packer-plugin-exoscale](github.com/exoscale/packer-plugin-exoscale)
-* [github.com/sylviamoss/packer-plugin-comment](github.com/sylviamoss/packer-plugin-comment)
+* [github.com/hashicorp/packer-plugin-docker](https://github.com/hashicorp/packer-plugin-docker)
+* [github.com/exoscale/packer-plugin-exoscale](https://github.com/exoscale/packer-plugin-exoscale)
+* [github.com/sylviamoss/packer-plugin-comment](https://github.com/sylviamoss/packer-plugin-comment)
 
 Looking at their code will give you good examples.
 
