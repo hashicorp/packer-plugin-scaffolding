@@ -53,13 +53,11 @@ This is done by adding the block below for the respective plugin to the file [we
    "title": "Scaffolding",
    "path": "scaffolding",
    "repo": "hashicorp/packer-plugin-scaffolding",
-   "branch": "main",
    "version": "latest"
  }
 ```
 
 If a plugin maintainer wishes to only include a specific version of released docs then the `"version"` key in the above configuration should be set to a released version of the plugin.
-
 
 The documentation structure needed for Packer.io can be generated manually, by creating a simple zip file called `docs.zip` of the docs directory and included in the plugin release.
 
@@ -68,20 +66,6 @@ The documentation structure needed for Packer.io can be generated manually, by c
 ```
 
 Once the first `docs.zip` file has been included into a release you will need to open a one time pull-request against [hashicorp/packer](https://github.com/hashicorp/packer) to register the plugin docs.
-
-This is done by adding the block below for the respective plugin to the file [website/data/docs-remote-navigation.js](https://github.com/hashicorp/packer/blob/master/website/data/docs-remote-plugins.json).
-
-```json
-{
-   "title": "Scaffolding",
-   "path": "scaffolding",
-   "repo": "hashicorp/packer-plugin-scaffolding",
-   "branch": "main",
-   "version": "latest"
- }
-```
-
-If a plugin maintainer wishes to only include a specific version of released docs then the `"version"` key in the above configuration should be set to a released version of the plugin.
 
 # Requirements
 
