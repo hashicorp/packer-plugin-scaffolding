@@ -41,13 +41,11 @@ This will help test and validate plugin releases.
 ## Registering Documentation on Packer.io
 
 Documentation for a plugin is maintained within the `docs` directory and served on GitHub.
-To include plugin docs on Packer.io a GitHub workflow has been added to this template repository that
-can be used generate a documentation structure that can be consumed remotely by Packer.io.
-See the workflow [generated-docs-artifacts.yml](.github/workflows/generate-docs-artifacts.yml)
+To include plugin docs on Packer.io a global pre-hook has been added to the main scaffolding .goreleaser.yml file, that if uncommented will generate and include a docs.zip file as part of the plugin release.
 
-After merging the generated files to the default branch for the plugin repository
+The `docs.zip` file will contain all of the `.mdx` files under the plugins root `docs/` directory that can be consumed remotely by Packer.io.
 
-you will need to open a one time pull-request against [hashicorp/packer](https://github.com/hashicorp/packer) to register the plugin docs.
+Once the first `docs.zip` file has been included into a release you will need to open a one time pull-request against [hashicorp/packer](https://github.com/hashicorp/packer) to register the plugin docs.
 This is done by adding the block below for the respective plugin to the file [website/data/docs-remote-navigation.js](https://github.com/hashicorp/packer/blob/master/website/data/docs-remote-plugins.json).
 
 ```json
@@ -56,26 +54,21 @@ This is done by adding the block below for the respective plugin to the file [we
    "path": "scaffolding",
    "repo": "hashicorp/packer-plugin-scaffolding",
    "branch": "main",
-   "artifactDir": ".doc-artifacts"
+   "version": "latest"
  }
 ```
 
+If a plugin maintainer wishes to only include a specific version of released docs then the `"version"` key in the above configuration should be set to a released version of the plugin.
 
-The documentation structure needed for Packer.io can be generated manually, but it is
-encouraged to use the action on release events so that documentation stays up to date.
 
-Requirements:  Nodejs and NPM
+The documentation structure needed for Packer.io can be generated manually, by creating a simple zip file called `docs.zip` of the docs directory and included in the plugin release.
 
-In the plugin root execute the command packer-docs-artifact command
-
-```
-> npx -p @hashicorp/packer-docs-artifacts generate
+```/bin/bash
+[[ -d docs/ ]] && zip -r docs.zip docs/
 ```
 
-The generated files will be placed under `PLUGIN_ROOT/.doc-artifacts`; this directory contains all the docs
-and respective navigation information needed for including the plugin docs under packer.io/docs/
+Once the first `docs.zip` file has been included into a release you will need to open a one time pull-request against [hashicorp/packer](https://github.com/hashicorp/packer) to register the plugin docs.
 
-A one time pull-request will needs to be opened against [hashicorp/packer](https://github.com/hashicorp/packer) to register the plugin docs.
 This is done by adding the block below for the respective plugin to the file [website/data/docs-remote-navigation.js](https://github.com/hashicorp/packer/blob/master/website/data/docs-remote-plugins.json).
 
 ```json
@@ -84,9 +77,11 @@ This is done by adding the block below for the respective plugin to the file [we
    "path": "scaffolding",
    "repo": "hashicorp/packer-plugin-scaffolding",
    "branch": "main",
-   "artifactDir": ".doc-artifacts"
+   "version": "latest"
  }
 ```
+
+If a plugin maintainer wishes to only include a specific version of released docs then the `"version"` key in the above configuration should be set to a released version of the plugin.
 
 # Requirements
 
