@@ -1,6 +1,7 @@
 package scaffolding
 
 import (
+	_ "embed"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -11,8 +12,11 @@ import (
 	"github.com/hashicorp/packer-plugin-sdk/acctest"
 )
 
+//go:embed test-fixtures/template.pkr.hcl
+var testPostProcessorHCL2Basic string
+
 // Run with: PACKER_ACC=1 go test -count 1 -v ./post-processor/scaffolding/post-processor_acc_test.go  -timeout=120m
-func TestScaffoldingPostProcessor(t *testing.T) {
+func TestAccScaffoldingPostProcessor(t *testing.T) {
 	testCase := &acctest.PluginTestCase{
 		Name: "scaffolding_post-processor_basic_test",
 		Setup: func() error {
@@ -51,19 +55,3 @@ func TestScaffoldingPostProcessor(t *testing.T) {
 	}
 	acctest.TestPlugin(t, testCase)
 }
-
-const testPostProcessorHCL2Basic = `
-source "null" "basic-example" {
-  communicator = "none"
-}
-
-build {
-  sources = [
-    "source.null.basic-example"
-  ]
-
-  post-processor "scaffolding-my-post-processor" {
-    mock = "my-mock-config"
-  }
-}
-`
