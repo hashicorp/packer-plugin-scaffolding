@@ -1,6 +1,7 @@
 package scaffolding
 
 import (
+	_ "embed"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -11,8 +12,11 @@ import (
 	"github.com/hashicorp/packer-plugin-sdk/acctest"
 )
 
+//go:embed test-fixtures/template.pkr.hcl
+var testBuilderHCL2Basic string
+
 // Run with: PACKER_ACC=1 go test -count 1 -v ./builder/scaffolding/builder_acc_test.go  -timeout=120m
-func TestScaffoldingBuilder(t *testing.T) {
+func TestAccScaffoldingBuilder(t *testing.T) {
 	testCase := &acctest.PluginTestCase{
 		Name: "scaffolding_builder_basic_test",
 		Setup: func() error {
@@ -51,21 +55,3 @@ func TestScaffoldingBuilder(t *testing.T) {
 	}
 	acctest.TestPlugin(t, testCase)
 }
-
-const testBuilderHCL2Basic = `
-source "scaffolding-my-builder" "basic-example" {
-  mock = "mock-config"
-}
-
-build {
-  sources = [
-    "source.scaffolding-my-builder.basic-example"
-  ]
-
-  provisioner "shell-local" {
-    inline = [
-      "echo build generated data: ${build.GeneratedMockData}",
-    ]
-  }
-}
-`

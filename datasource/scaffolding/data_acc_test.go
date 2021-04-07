@@ -1,6 +1,7 @@
 package scaffolding
 
 import (
+	_ "embed"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -11,8 +12,11 @@ import (
 	"github.com/hashicorp/packer-plugin-sdk/acctest"
 )
 
+//go:embed test-fixtures/template.pkr.hcl
+var testDatasourceHCL2Basic string
+
 // Run with: PACKER_ACC=1 go test -count 1 -v ./datasource/scaffolding/data_acc_test.go  -timeout=120m
-func TestScaffoldingDatasource(t *testing.T) {
+func TestAccScaffoldingDatasource(t *testing.T) {
 	testCase := &acctest.PluginTestCase{
 		Name: "scaffolding_datasource_basic_test",
 		Setup: func() error {
@@ -56,31 +60,3 @@ func TestScaffoldingDatasource(t *testing.T) {
 	}
 	acctest.TestPlugin(t, testCase)
 }
-
-const testDatasourceHCL2Basic = `
-data "scaffolding-my-datasource" "test" {
-  mock = "mock-config"
-}
-
-locals {
-  foo = data.scaffolding-my-datasource.test.foo
-  bar = data.scaffolding-my-datasource.test.bar
-}
-
-source "null" "basic-example" {
-  communicator = "none"
-}
-
-build {
-  sources = [
-    "source.null.basic-example"
-  ]
-
-  provisioner "shell-local" {
-    inline = [
-      "echo foo: ${local.foo}",
-      "echo bar: ${local.bar}",
-    ]
-  }
-}
-`
