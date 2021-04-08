@@ -64,11 +64,14 @@ This is done by adding the block below for the respective plugin to the file [we
    "title": "Scaffolding",
    "path": "scaffolding",
    "repo": "hashicorp/packer-plugin-scaffolding",
-   "version": "latest"
+   "version": "latest",
+   "sourceBranch": "main"
  }
 ```
 
-If a plugin maintainer wishes to only include a specific version of released docs then the `"version"` key in the above configuration should be set to a released version of the plugin.
+If a plugin maintainer wishes to only include a specific version of released docs then the `"version"` key in the above configuration should be set to a released version of the plugin. Otherwise it should be set to `"latest"`.
+
+The `"sourceBranch"` key in the above configuration ensures potential contributors can link back to source files in the plugin repository from the Packer docs site. If a `"sourceBranch"` value is not present, it will default to `"main"`. 
 
 The documentation structure needed for Packer.io can be generated manually, by creating a simple zip file called `docs.zip` of the docs directory and included in the plugin release.
 
