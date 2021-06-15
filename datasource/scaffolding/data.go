@@ -1,4 +1,4 @@
-//go:generate mapstructure-to-hcl2 -type Config,DatasourceOutput
+//go:generate packer-sdc mapstructure-to-hcl2 -type Config,DatasourceOutput
 package scaffolding
 
 import (
