@@ -3,7 +3,7 @@
 This repository is a template for a Packer multi-component plugin. It is intended as a starting point for creating Packer plugins, containing:
 - A builder ([builder/scaffolding](builder/scaffolding))
 - A provisioner ([provisioner/scaffolding](provisioner/scaffolding))
-- A post-processor ([post-processor/scaffolding](provisioner/scaffolding))
+- A post-processor ([post-processor/scaffolding](post-processor/scaffolding))
 - A data source ([datasource/scaffolding](datasource/scaffolding))
 - Docs ([docs](docs))
 - A working example ([example](example))
