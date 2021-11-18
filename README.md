@@ -71,7 +71,7 @@ This is done by adding the block below for the respective plugin to the file [we
 
 If a plugin maintainer wishes to only include a specific version of released docs then the `"version"` key in the above configuration should be set to a released version of the plugin. Otherwise it should be set to `"latest"`.
 
-The `"sourceBranch"` key in the above configuration ensures potential contributors can link back to source files in the plugin repository from the Packer docs site. If a `"sourceBranch"` value is not present, it will default to `"main"`. 
+The `"sourceBranch"` key in the above configuration ensures potential contributors can link back to source files in the plugin repository from the Packer docs site. If a `"sourceBranch"` value is not present, it will default to `"main"`.
 
 The documentation structure needed for Packer.io can be generated manually, by creating a simple zip file called `docs.zip` of the docs directory and included in the plugin release.
 
@@ -83,8 +83,8 @@ Once the first `docs.zip` file has been included into a release you will need to
 
 # Requirements
 
--	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= v0.1.0
--	[Go](https://golang.org/doc/install) >= 1.16
+-	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= v0.2.9
+-	[Go](https://golang.org/doc/install) >= 1.17
 
 ## Packer Compatibility
 This scaffolding template is compatible with Packer >= v1.7.0
