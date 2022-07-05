@@ -1,4 +1,9 @@
 main
-dist/*
 packer-plugin-scaffolding
+**/packer_log*.txt
+**/git_*test.pkr.hcl
+crash.log
+
+dist/*
 .docs/*
+docs.zip
