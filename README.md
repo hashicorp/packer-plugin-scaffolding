@@ -49,42 +49,21 @@ within the [example](example) folder. This is useful to quickly test a basic tem
 The example must contain the `required_plugins` block and require your plugin at the latest or any other released version.
 This will help test and validate plugin releases.
 
-## Registering Documentation on Packer.io
+## Registering Plugin as Packer Integration
 
-Documentation for a plugin is maintained within the `docs` directory and served on GitHub.
-To include plugin docs on Packer.io a global pre-hook has been added to the main scaffolding .goreleaser.yml file, that if uncommented will generate and include a docs.zip file as part of the plugin release.
+Partner and community plugins can be hard to find if a user doesn't know what 
+they are looking for. To assist with plugin discovery Packer offers an integration
+portal at https://developer.hashicorp.com/packer/integrations to list known integrations 
+that work with the latest release of Packer. 
 
-The `docs.zip` file will contain all of the `.mdx` files under the plugins root `docs/` directory that can be consumed remotely by Packer.io.
-
-Once the first `docs.zip` file has been included into a release you will need to open a one time pull-request against [hashicorp/packer](https://github.com/hashicorp/packer) to register the plugin docs.
-This is done by adding the block below for the respective plugin to the file [website/data/docs-remote-navigation.js](https://github.com/hashicorp/packer/blob/master/website/data/docs-remote-plugins.json).
-
-```json
-{
-   "title": "Scaffolding",
-   "path": "scaffolding",
-   "repo": "hashicorp/packer-plugin-scaffolding",
-   "version": "latest",
-   "sourceBranch": "main"
- }
-```
-
-If a plugin maintainer wishes to only include a specific version of released docs then the `"version"` key in the above configuration should be set to a released version of the plugin. Otherwise it should be set to `"latest"`.
-
-The `"sourceBranch"` key in the above configuration ensures potential contributors can link back to source files in the plugin repository from the Packer docs site. If a `"sourceBranch"` value is not present, it will default to `"main"`.
-
-The documentation structure needed for Packer.io can be generated manually, by creating a simple zip file called `docs.zip` of the docs directory and included in the plugin release.
-
-```/bin/bash
-[[ -d docs/ ]] && zip -r docs.zip docs/
-```
-
-Once the first `docs.zip` file has been included into a release you will need to open a one time pull-request against [hashicorp/packer](https://github.com/hashicorp/packer) to register the plugin docs.
+Registering a plugin as an integration requires [metadata configuration](./metadata.hcl) within the plugin
+repository and approval by the Packer team. To initiate the process of registering your 
+plugin as a Packer integration refer to the [Developing Plugins](https://developer.hashicorp.com/docs/packer/plugins/creation) page.
 
 # Requirements
 
 -	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= v0.2.9
--	[Go](https://golang.org/doc/install) >= 1.17
+-	[Go](https://golang.org/doc/install) >= 1.20
 
 ## Packer Compatibility
 This scaffolding template is compatible with Packer >= v1.7.0
