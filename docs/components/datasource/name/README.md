@@ -1,13 +1,3 @@
----
-description: >
-  The scaffolding data source is used to create endless Packer plugins using
-  a consistent plugin structure.
-page_title: Scaffolding - Data Sources
-nav_title: Scaffolding
----
-
-# Scaffolding
-
 Type: `scaffolding`
 
 <!--
@@ -22,7 +12,7 @@ a consistent plugin structure.
 
 <!-- Data source Configuration Fields -->
 
-### Required
+**Required**
 
 - `mock` (string) - The name of the mock to use for the Scaffolding API.
 
@@ -35,7 +25,7 @@ a consistent plugin structure.
   noted in the description of the field
 -->
 
-### Optional
+**Optional**
 
 - `mock_api_url` (string) - The Scaffolding API endpoint to connect to.
   Defaults to https://example.com

@@ -1,12 +1,3 @@
----
-description: >
-  The scaffolding post-processor is used to export Packer Scaffolding builds.
-page_title: Scaffolding - Post-Processors
-nav_title: Scaffolding
----
-
-# Scaffolding
-
 Type: `scaffolding`
 
 <!--
@@ -20,7 +11,7 @@ The scaffolding post-processor is used to export Packer Scaffolding builds.
 
 <!-- Post-Processor Configuration Fields -->
 
-### Required
+**Required**
 
 - `mock` (string) - The output path where to save exported build to.
 
@@ -32,7 +23,7 @@ The scaffolding post-processor is used to export Packer Scaffolding builds.
   noted in the description of the field
 -->
 
-### Optional
+**Optional**
 
 
 <!--
