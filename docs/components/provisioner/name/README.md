@@ -1,12 +1,3 @@
----
-description: >
-  The scaffolding provisioner is used to provisioner Packer builds.
-page_title: Scaffolding - Provisioners
-nav_title: Scaffolding
----
-
-# Scaffolding
-
 Type: `scaffolding`
 
 <!--
@@ -20,7 +11,7 @@ The scaffolding provisioner is used to provisioner Packer builds.
 
 <!-- Provisioner Configuration Fields -->
 
-### Required
+**Required**
 
 - `mock` (string) - The name of the mock string to display.
 
@@ -33,7 +24,7 @@ The scaffolding provisioner is used to provisioner Packer builds.
   noted in the description of the field
 -->
 
-### Optional
+**Optional**
 
 
 <!--
