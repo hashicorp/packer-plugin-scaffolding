@@ -58,7 +58,7 @@ that work with the latest release of Packer.
 
 Registering a plugin as an integration requires [metadata configuration](./metadata.hcl) within the plugin
 repository and approval by the Packer team. To initiate the process of registering your 
-plugin as a Packer integration refer to the [Developing Plugins](https://developer.hashicorp.com/docs/packer/plugins/creation) page.
+plugin as a Packer integration refer to the [Developing Plugins](https://developer.hashicorp.com/packer/docs/plugins/creation#registering-plugins) page.
 
 # Requirements
 
