@@ -6,11 +6,12 @@ package main
 import (
 	"fmt"
 	"os"
-	"packer-plugin-scaffolding/builder/scaffolding"
-	scaffoldingData "packer-plugin-scaffolding/datasource/scaffolding"
-	scaffoldingPP "packer-plugin-scaffolding/post-processor/scaffolding"
-	scaffoldingProv "packer-plugin-scaffolding/provisioner/scaffolding"
-	scaffoldingVersion "packer-plugin-scaffolding/version"
+
+	"github.com/hashicorp/packer-plugin-scaffolding/builder/scaffolding"
+	scaffoldingData "github.com/hashicorp/packer-plugin-scaffolding/datasource/scaffolding"
+	scaffoldingPP "github.com/hashicorp/packer-plugin-scaffolding/post-processor/scaffolding"
+	scaffoldingProv "github.com/hashicorp/packer-plugin-scaffolding/provisioner/scaffolding"
+	scaffoldingVersion "github.com/hashicorp/packer-plugin-scaffolding/version"
 
 	"github.com/hashicorp/packer-plugin-sdk/plugin"
 )

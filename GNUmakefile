@@ -13,7 +13,7 @@ build:
 
 dev:
 	go build -ldflags="-X '${PLUGIN_FQN}/version.VersionPrerelease=dev'" -o ${BINARY}
-	packer plugins install --path ${BINARY} "github.com/hashicorp/$(shell echo "${PLUGIN_FQN}" | sed 's/packer-plugin-//')"
+	packer plugins install --path ${BINARY} "$(shell echo "${PLUGIN_FQN}" | sed 's/packer-plugin-//')"
 
 test:
 	@go test -race -count $(COUNT) $(TEST) -timeout=3m
