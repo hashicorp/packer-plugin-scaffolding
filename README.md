@@ -29,25 +29,40 @@ Here's a non exaustive list of Packer plugins that you can checkout:
 
 Looking at their code will give you good examples.
 
+## Build from source
+
+1. Clone this GitHub repository locally.
+
+2. Run this command from the root directory: `go build -ldflags="-X github.com/hashicorp/packer-plugin-scaffolding/version.VersionPrerelease=dev" -o packer-plugin-scaffolding`
+
+3. After you successfully compile, the `packer-plugin-scaffolding` plugin binary file is in the root directory. 
+
+4. To install the compiled plugin, run the following command `packer plugins install --path packer-plugin-scaffolding github.com/hashicorp/scaffolding`
+
+### Build on *nix systems
+Unix like systems with the make, sed, and grep commands installed can use the `make dev` to execute the build from source steps. 
+
+### Build on Windows Powershell
+The preferred solution for building on Windows are steps 2-4 listed above.
+If you would prefer to script the building process you can use the following as a guide
+
+```powershell
+$MODULE_NAME = (Get-Content go.mod | Where-Object { $_ -match "^module"  }) -replace 'module ',''
+$FQN = $MODULE_NAME -replace 'packer-plugin-',''
+go build -ldflags="-X $MODULE_NAME/version.VersionPrerelease=dev" -o packer-plugin-scaffolding.exe
+packer plugins install --path packer-plugin-scaffolding.exe $FQN
+```
+
 ## Running Acceptance Tests
 
-Make sure to install the plugin with `go build .` and to have Packer installed locally.
-Then source the built binary to the plugin path with `cp packer-plugin-scaffolding ~/.packer.d/plugins/packer-plugin-scaffolding`
+Make sure to install the plugin locally using the steps in [Build from source](#build-from-source).
+
 Once everything needed is set up, run:
 ```
 PACKER_ACC=1 go test -count 1 -v ./... -timeout=120m
 ```
 
 This will run the acceptance tests for all plugins in this set.
-
-## Test Plugin Example Action
-
-This scaffolding configures a [manually triggered plugin test action](/.github/workflows/test-plugin-example.yml).
-By default, the action will run Packer at the latest version to init, validate, and build the example configuration
-within the [example](example) folder. This is useful to quickly test a basic template of your plugin against Packer.
-
-The example must contain the `required_plugins` block and require your plugin at the latest or any other released version.
-This will help test and validate plugin releases.
 
 ## Registering Plugin as Packer Integration
 
@@ -62,8 +77,8 @@ plugin as a Packer integration refer to the [Developing Plugins](https://develop
 
 # Requirements
 
--	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= v0.2.9
+-	[packer-plugin-sdk](https://github.com/hashicorp/packer-plugin-sdk) >= v0.5.2
 -	[Go](https://golang.org/doc/install) >= 1.20
 
 ## Packer Compatibility
-This scaffolding template is compatible with Packer >= v1.7.0
+This scaffolding template is compatible with Packer >= v1.10.2
