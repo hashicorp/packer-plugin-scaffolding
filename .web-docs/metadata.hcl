@@ -8,7 +8,18 @@ integration {
   name = "Integration Template"
   description = "This is an integration template"
   identifier = "packer/hashicorp/scaffolding"
-  flags = [ "community" ]
+  flags = [
+    # Remove if the plugin does not conform to the HCP Packer requirements.
+    #
+    # Please refer to our docs if you want your plugin to be compatible with
+    # HCP Packer: https://developer.hashicorp.com/packer/docs/plugins/creation/hcp-support
+    "hcp-ready",
+    # This signals that the plugin is unmaintained and will eventually not be
+    # working with a future version of Packer.
+    #
+    # On the integrations, this will end-up as an icon on the plugin's main card.
+    "archived",
+  ]
   docs {
     process_docs = true
     # We recommend using the default readme_location of just `./README.md` here
