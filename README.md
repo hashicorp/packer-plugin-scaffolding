@@ -33,11 +33,17 @@ Looking at their code will give you good examples.
 
 1. Clone this GitHub repository locally.
 
-2. Run this command from the root directory: `go build -ldflags="-X github.com/hashicorp/packer-plugin-scaffolding/version.VersionPrerelease=dev" -o packer-plugin-scaffolding`
+2. Run this command from the root directory: 
+```shell 
+go build -ldflags="-X github.com/hashicorp/packer-plugin-scaffolding/version.VersionPrerelease=dev" -o packer-plugin-scaffolding
+```
 
 3. After you successfully compile, the `packer-plugin-scaffolding` plugin binary file is in the root directory. 
 
-4. To install the compiled plugin, run the following command `packer plugins install --path packer-plugin-scaffolding github.com/hashicorp/scaffolding`
+4. To install the compiled plugin, run the following command 
+```shell
+packer plugins install --path packer-plugin-scaffolding github.com/hashicorp/scaffolding
+```
 
 ### Build on *nix systems
 Unix like systems with the make, sed, and grep commands installed can use the `make dev` to execute the build from source steps. 
