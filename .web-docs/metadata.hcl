@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: MPL-2.0
 
 # Details on using this Integration template can be found at https://github.com/hashicorp/integration-template
-# Alternatively this metadata.hcl file can be placed under the docs/ subdirectory or any other config subdirectory that 
-# makes senses for the plugin. 
+# Alternatively this metadata.hcl file can be placed under the docs/ subdirectory or any other config subdirectory that
+# makes senses for the plugin.
 integration {
   name = "Integration Template"
   description = "This is an integration template"
