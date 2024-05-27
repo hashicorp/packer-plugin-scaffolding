@@ -28,9 +28,10 @@ integration {
     # repository to the correct location.
     readme_location = "./README.md"
     # If you'd prefer not to publish docs on HashiCorp websites, you can
-    # set `process_docs` to `false`, uncommment the `external_url` below, and
-    # provide a link to your plugin's GitHub repository.
-    # external_url = "https://github.com/hashicorp/integration-template"
+    # set `process_docs` to `false`. In this case, you MUST provide a link to
+    # your plugin's GitHub repository. Otherwise, `external_url` is optional,
+    # but recommended, as it allows us to link back to your plugin repo.
+    external_url = "https://github.com/hashicorp/integration-template"
   }
   license {
     type = "MPL-2.0"
