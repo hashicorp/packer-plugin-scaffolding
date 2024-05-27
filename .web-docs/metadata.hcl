@@ -22,15 +22,15 @@ integration {
   ]
   docs {
     # If you'd prefer not to publish docs on HashiCorp websites, you can
-    # set `process_docs` to `false`. In this case, you MUST provide a link to
-    # your plugin's GitHub repository. Otherwise, `external_url` is optional,
-    # but recommended, as it allows us to link back to your plugin repo.
+    # set `process_docs` to `false`. If `process_docs` is `false`, you MUST
+    # provide a `external_url` so we can link back to your plugin repo.
     process_docs = true
     # Note that the README location is relative to this file. We recommend
     # keeping the default value, as the adjacent `compile-to-webdocs` script
     # will automatically copy the README from the `docs` directory of this
     # repository to the correct location.
     readme_location = "./README.md"
+    # `external_url` allows us to link back to your plugin repo.
     external_url = "https://github.com/hashicorp/integration-template"
   }
   license {
