@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: MPL-2.0
 
 # Details on using this Integration template can be found at https://github.com/hashicorp/integration-template
-# Alternatively this metadata.hcl file can be placed under the docs/ subdirectory or any other config subdirectory that
-# makes senses for the plugin.
+# This metadata.hcl file and the adjacent `components` docs directory should
+# be kept in a `.web-docs` directory at the root of your plugin repository.
 integration {
   name = "Integration Template"
   description = "This is an integration template"
@@ -22,13 +22,15 @@ integration {
   ]
   docs {
     process_docs = true
-    # We recommend using the default readme_location of just `./README.md` here
-    # This projects README needs to document the interface of an integration.
-    #
-    # If you need a separate README from what you will display on GitHub vs
-    # what is shown on HashiCorp Developer, this is totally valid, though!
-    readme_location = "./INTEGRATION_README.md"
-    external_url = "https://github.com/hashicorp/integration-template"
+    # Note that the README location is relative to this file. We recommend
+    # keeping the default value, as the adjacent `compile-to-webdocs` script
+    # will automatically copy the README from the `docs` directory of this
+    # repository to the correct location.
+    readme_location = "./README.md"
+    # If you'd prefer not to publish docs on HashiCorp websites, you can
+    # set `process_docs` to `false`, uncommment the `external_url` below, and
+    # provide a link to your plugin's GitHub repository.
+    # external_url = "https://github.com/hashicorp/integration-template"
   }
   license {
     type = "MPL-2.0"
