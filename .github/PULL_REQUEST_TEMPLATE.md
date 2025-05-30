@@ -1,13 +1,3 @@
-**DELETE THIS PART BEFORE SUBMITTING**
-
-In order to have a good experience with our community, we recommend that you
-read the contributing guidelines for making a PR, and understand the lifecycle
-of a Packer Plugin PR:
-
-https://github.com/hashicorp/packer-plugin-hpats/blob/main/.github/CONTRIBUTING.md#opening-an-pull-request
-
-----
-
 ### Description
 What code changed, and why?
 
