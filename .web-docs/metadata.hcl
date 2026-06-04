@@ -7,10 +7,7 @@ integration {
   name = "Host Info"
   description = "The Host Info plugin detects the operating system, version, and CPU architecture of the host where Packer is running"
   identifier = "packer/stromweld/host-info"
-  flags = [
-    # The plugin conforms to HCP Packer requirements
-    "hcp-ready"
-  ]
+  flags = []
   docs {
     process_docs = true
     readme_location = "./README.md"

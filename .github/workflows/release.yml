@@ -45,18 +45,18 @@ jobs:
       - name: Describe plugin
         id: plugin_describe
         run: echo "api_version=$(go run . describe | jq -r '.api_version')" >> $GITHUB_OUTPUT
-#       - name: Import GPG key
-#         id: import_gpg
-#         uses: crazy-max/ghaction-import-gpg@v6
-#         with:
-#           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-#           passphrase: ${{ secrets.GPG_PASSPHRASE }}
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
         with:
           version: latest
           args: release --clean --timeout 120m
         env:
-#           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
+          GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           API_VERSION: ${{ steps.plugin_describe.outputs.api_version }}
